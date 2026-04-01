@@ -4,78 +4,78 @@
 
 ---
 
+# QRAFT: QLoRA Retrieval-Augmented Fine-Tuning for Causal Span Extraction in Financial Documents
+
+📄 Research Paper: [View PDF](./QRAFT-FinCausal-2026.pdf)
+
+---
+
 ## 📌 Overview
 
-Understanding *why* financial outcomes occur is critical for financial analysis, risk assessment, and intelligent automation.
+Financial documents do not just report outcomes — they explain **why those outcomes occur**. Extracting this causal reasoning automatically is a challenging task due to domain complexity, implicit relationships, and linguistic nuance.
 
-This project presents **QRAFT**, a system developed for the **FinCausal 2026 Shared Task**, focused on extracting **causal spans** from financial documents using modern **LLM fine-tuning and retrieval techniques**.
+This project presents our system for the **FinCausal 2026 Shared Task (English Subtask)**, where the objective is to extract **verbatim causal spans** from financial text in response to abstractive causal questions.
 
----
-
-## 🧠 Key Highlights
-
-* Fine-tuned **Qwen2.5-4B-Instruct** using **QLoRA** on 2,000 financial instances
-* Integrated **TF-IDF based retrieval** to guide model predictions
-* Designed a **verbatim span extraction pipeline** to reduce hallucination
-* Achieved **4.76 / 5 LLM-as-a-judge score**
-* Ranked **4th out of 9 teams** on the official leaderboard
+Our approach is based on the idea that a **well-adapted compact model**, combined with **targeted retrieval**, can outperform larger but unfocused systems.
 
 ---
 
-## ⚙️ Methodology
+## 🧠 Approach
 
-### 1. Instruction Formatting
+Our system consists of three core components:
 
-Training data is converted into **ChatML format** to align with instruction-tuned LLM behavior.
+### 🔹 1. Instruction-Tuned Fine-Tuning
 
-### 2. QLoRA Fine-Tuning
+* Reformatted all training data into **Qwen ChatML format**
+* Fine-tuned **Qwen2.5-4B-Instruct** using **QLoRA**
+* Enabled efficient domain adaptation with limited computational resources
 
-* 4-bit quantization
-* Low-rank adapters (LoRA)
-* Efficient domain adaptation with limited compute
+### 🔹 2. Retrieval-Augmented Inference
 
-### 3. Retrieval-Augmented Inference
+* Applied **TF-IDF cosine similarity** to retrieve the most causally relevant sentence
+* Provided an explicit **local relevance signal** before generation
 
-* TF-IDF cosine similarity retrieves the most relevant sentence
-* Retrieved context improves answer grounding
+### 🔹 3. Verbatim Span Extraction
 
-### 4. Deterministic Decoding
-
-* Greedy decoding ensures stable and verbatim outputs
+* Enforced strict extraction from source text
+* Used **greedy decoding** for deterministic, source-grounded outputs
+* Reduced hallucination and ensured faithful predictions
 
 ---
 
 ## 📊 Results
 
-| Metric         | Score             |
-| -------------- | ----------------- |
-| LLM-as-a-judge | **4.76 / 5**      |
-| Rank           | **4th / 9 teams** |
+Under the official **LLM-as-a-judge evaluation framework** (semantic adequacy scoring):
+
+* ⭐ **Score:** 4.76 / 5
+* 🏆 **Rank:** 4th out of 9 teams
+
+This evaluation prioritizes **semantic correctness over lexical overlap**, making it a more realistic measure of causal reasoning quality.
 
 ---
 
-## 📂 Dataset
+## 🔍 Key Insights
 
-* FinCausal 2026 (English Subtask)
-* 2,000 training instances
-* 500 test instances
-* Task: Extract causal spans from financial documents
+* Compact models can achieve strong performance when **fine-tuned on domain-specific data**
+* Instruction formatting significantly improves **verbatim extraction behavior**
+* Lightweight retrieval methods like TF-IDF remain highly effective for **grounding generation**
+* LLM-as-a-judge evaluation provides a **better signal than exact match metrics**
 
 ---
 
 ## ⚠️ Limitations
 
-* Long causal spans may introduce boundary errors
-* Multi-hop causal reasoning remains challenging
-* Limited discourse-level understanding
+* Long causal spans may introduce boundary inaccuracies
+* Multi-hop causal chains remain difficult to resolve
+* Limited discourse-level reasoning capability
 
 ---
 
 ## 🔮 Future Work
 
-* Discourse-aware models for complex reasoning
-* Dense retrieval for improved semantic matching
-* Enhanced span extraction for long contexts
+* Develop **discourse-aware models** for multi-hop causal reasoning
+* Explore **dense retrieval techniques** for improved semantic matching
+* Improve extraction accuracy for complex, long-span answers
 
 ---
 
@@ -96,21 +96,26 @@ Training data is converted into **ChatML format** to align with instruction-tune
 ## 🛠 Tech Stack
 
 * Python
-* PyTorch
-* Transformers
+* PyTorch / Transformers
 * QLoRA
 * Qwen LLM
 * TF-IDF Retrieval
 
 ---
 
-## ⭐ Support
+## 📬 Contact
 
-If you find this work useful, consider giving it a ⭐ on GitHub!
+📧 [bhavyasarda19@gmail.com](mailto:bhavyasarda19@gmail.com)
+🔗 [LinkedIn]([https://linkedin.com/in/bavya-sarda-8a5011270](https://leetcode.com/u/bavya_sarda/))
 
 ---
+
+## ⭐ Support
+
+If you found this work useful, consider giving this repository a ⭐
+
 
 ## 📬 Contact
 
 📧 [bhavyasarda19@gmail.com](mailto:bhavyasarda19@gmail.com)
-🔗 [LinkedIn](https://linkedin.com/in/bavya-sarda-8a5011270)
+🔗 [LinkedIn]([https://linkedin.com/in/bavya-sarda-8a5011270](https://leetcode.com/u/bavya_sarda/))
