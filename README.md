@@ -4,12 +4,6 @@
 
 ---
 
-# QRAFT: QLoRA Retrieval-Augmented Fine-Tuning for Causal Span Extraction in Financial Documents
-
-📄 Research Paper: [View PDF](./QRAFT-FinCausal-2026.pdf)
-
----
-
 ## 📌 Overview
 
 Financial documents do not just report outcomes — they explain **why those outcomes occur**. Extracting this causal reasoning automatically is a challenging task due to domain complexity, implicit relationships, and linguistic nuance.
@@ -27,7 +21,7 @@ Our system consists of three core components:
 ### 🔹 1. Instruction-Tuned Fine-Tuning
 
 * Reformatted all training data into **Qwen ChatML format**
-* Fine-tuned **Qwen2.5-4B-Instruct** using **QLoRA**
+* Fine-tuned **Qwen3-4B-Instruct** using **QLoRA**
 * Enabled efficient domain adaptation with limited computational resources
 
 ### 🔹 2. Retrieval-Augmented Inference
@@ -108,14 +102,3 @@ This evaluation prioritizes **semantic correctness over lexical overlap**, makin
 📧 [bhavyasarda19@gmail.com](mailto:bhavyasarda19@gmail.com)
 🔗 [LinkedIn]([https://linkedin.com/in/bavya-sarda-8a5011270](https://leetcode.com/u/bavya_sarda/))
 
----
-
-## ⭐ Support
-
-If you found this work useful, consider giving this repository a ⭐
-
-
-## 📬 Contact
-
-📧 [bhavyasarda19@gmail.com](mailto:bhavyasarda19@gmail.com)
-🔗 [LinkedIn]([https://linkedin.com/in/bavya-sarda-8a5011270](https://leetcode.com/u/bavya_sarda/))
