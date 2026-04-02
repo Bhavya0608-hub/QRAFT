@@ -1,7 +1,5 @@
 # QRAFT: QLoRA Retrieval-Augmented Fine-Tuning for Causal Span Extraction in Financial Documents
 
-📄 Research Paper: [View PDF](QRAFT__QLoRA_Retrieval_Augmented_Fine_Tuning_for_Causal_Span_Extraction_in_Financial_Documents...pdf)
-
 ---
 
 ## 📌 Overview
