@@ -98,5 +98,4 @@ This evaluation prioritizes **semantic correctness over lexical overlap**, makin
 ## 📬 Contact
 
 📧 [bhavyasarda19@gmail.com](mailto:bhavyasarda19@gmail.com)
-🔗 [LinkedIn]([https://linkedin.com/in/bavya-sarda-8a5011270](https://leetcode.com/u/bavya_sarda/))
 
